@@ -1,25 +1,80 @@
-         /* portfolio styles */
-         .content h1 {
-            color: rgb(247, 4, 222);
-        }
+body {
+    background: rgba(205, 125, 166, 0.48);
+    color: rgba(21, 167, 48, 0.769);
+    padding: 10px;
+    font-family: Georgia;
+    text-align:center;
+    border:dotted;
+    border-width:15px;
+    border-radius: 10px;
+}
+#all-contents {
+  max-width: 10000px;
+    margin: dotted;
+    border:round
+}
 
-        #portfolio {
-            list-style-type: none;
-            padding-left: 0;
-        }
+/* navigation menu */
+nav {
+    background: rgba(57, 184, 10, 0.798);
+   margin: 0 none;
+    display: flex;
+    padding: 10px;
+    border-radius:900px;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 5, 201);
+    flex: 25;
+    margin: 25;
+}
+#nav-ul {
+    list-style-image: Edge 12;
+    border-radius:900px
+}
+.nav-li {
+    display: inline-block;
+    padding: 0 10px;
+    border-radius:900px
+}
+a {
+    text-decoration: none;
+    color: #fb42a8a0;
+}
 
-        #portfolio li {
-            background: #0ec6f058;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+/* main container area beneath menu */
+main {
+    background: rgba(254, 20, 191, 0.172);
+    display: flex;
+    border-radius:900px;
+}
+.sidebar {
+    margin-right: 25px;
+    padding: 10px;
+    border:dotted;
 
-        #portfolio li:hover {
-            background: #f7eb04;
-        }
+}
+.sidebar-img {
+    width: 900px;
+    border:dotted;
+    border-radius:900px
 
-        #portfolio a {
-            text-decoration: none;
-            color: #0af4f8;
-        }
+}
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+/* portfolio styles */
+#interests {
+    border: 900px rgb(72, 252, 7) dotted;
+    padding: px;
+    border: dotted ;
+    border-radius;
+}
+h2, h3 {
+    margin: 15px;
+}
+     
+           
