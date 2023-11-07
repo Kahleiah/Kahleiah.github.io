@@ -6,21 +6,21 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 100px;
-			height: 100px;
-			background-color: teal;
+			width: 70;
+			height: 70;
+			background-image: url(https://cdn.britannica.com/84/73184-050-05ED59CB/Sunflower-field-Fargo-North-Dakota.jpg);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
-			top: 400px;
-			left: 100x { /* Your Function Call Here */
-
-}; /* <--- Change me! */
+			top: 100px;
+			left:0px; /* <--- Change me! */
+			
 		}
 		.board{
 			height: 100vh;
+			background-image: url(https://wpcdn.us-east-1.vip.tn-cloud.net/www.hawaiimagazine.com/content/uploads/2020/12/plumeria-2-Eric-Tessmer-Flickr-1024x708.jpg)
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -31,8 +31,7 @@
 	<div class="box">?</div>
 
 	<script>
-		(function()
-		{
+		(function(){
 			'use strict'
 			/* global jQuery */
 
@@ -49,15 +48,13 @@
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
-			function handleBoxClick() {
-   				positionX = 0;
-			}
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
+			function moveBoxTo(newPositionX, newPositionY){
+				box.css('left',newPositionX);
+				box.css('top', newPositionY);
 			}
-
+		
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
@@ -68,7 +65,14 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			var myVariable = someValue(0);
+		    
+			var postionX = 0;
+			var points = 0;
+			var speedX = 10;
+			var positionY = 0;
+			var speedY = 10;
+			var boardHeight = jQuery(window).height();
+			var randNum = Math.random() * 100;
 
 			
 			/* 
@@ -76,12 +80,25 @@
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
-    		/* Your Code to Increase positionX by 10 HERE */
-			myVariable = myVariable + 10;
-			moveBoxTo(positionX);
-			// When you first create the Variable...
-			var positionX = 0;
+			function update(){
+				positionX = positionX + speedX;
+				postitonY = posistionY + speedY
+				moveBoxTo(positionX, positionY);
+			}
+			if (positionX > boardWidth) {
+				speedX *= -1;
+			}
+			if(postionX < 0) {
+				speedX *= -1;
+			}
+
+			if (positionY > boardHeight){
+				speedY *= -1;
+			}
+			if(positionY < 0){
+				speedY *= -1;
+			}
+		    
 		 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -89,13 +106,17 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				position = 0;
-				changeBoxText(1);
-			}
-				
-
-
-			};
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points);
+				speed = speed + 3
+				if (speed > 0) {
+					speed += 3;
+				}
+				else if (speed < 0) {
+					speed = 3;
+				}
+			}; 
 		})();
 	</script>
 </body>
